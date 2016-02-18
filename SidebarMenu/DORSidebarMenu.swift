@@ -19,7 +19,7 @@ enum SidebarMenuError: ErrorType {
 public class DORSidebarMenu: UIWindow {
     
     // MARK: - Private constants
-    private var sidebarMenuView: SidebarMenuView
+    private var sidebarMenuView: DORSidebarMenuView
     
     // MARK: - Public variables
     public var animateDuration: CFTimeInterval = 0.2
@@ -71,7 +71,7 @@ public class DORSidebarMenu: UIWindow {
     // MARK: - Initializers
     
     private init(width: CGFloat, controllers: [UIViewController?]) {
-        sidebarMenuView = SidebarMenuView(width: width)
+        sidebarMenuView = DORSidebarMenuView(width: width)
         self.controllers = controllers
 
         super.init(frame: UIScreen.mainScreen().bounds)
@@ -162,7 +162,7 @@ public class DORSidebarMenu: UIWindow {
 }
 
 // MARK: - UITableViewDelegate
-extension SidebarMenu: UITableViewDelegate {
+extension DORSidebarMenu: UITableViewDelegate {
 
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuElements.count
@@ -171,7 +171,7 @@ extension SidebarMenu: UITableViewDelegate {
 }
 
 // MARK: - UITableViewDataSource
-extension SidebarMenu: UITableViewDataSource {
+extension DORSidebarMenu: UITableViewDataSource {
 
     public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
