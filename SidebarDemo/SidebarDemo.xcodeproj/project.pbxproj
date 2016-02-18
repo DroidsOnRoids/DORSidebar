@@ -12,9 +12,9 @@
 		AE9528691C75BADD0075DEFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9528671C75BADD0075DEFD /* Main.storyboard */; };
 		AE95286B1C75BADD0075DEFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE95286A1C75BADD0075DEFD /* Assets.xcassets */; };
 		AE95286E1C75BADD0075DEFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE95286C1C75BADD0075DEFD /* LaunchScreen.storyboard */; };
-		AE95287A1C75BAFB0075DEFD /* SidebarMenuWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9528761C75BAFB0075DEFD /* SidebarMenuWindow.swift */; };
-		AE95287B1C75BAFB0075DEFD /* SidebarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9528781C75BAFB0075DEFD /* SidebarMenuView.swift */; };
-		AE95287C1C75BAFB0075DEFD /* SidebarMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE9528791C75BAFB0075DEFD /* SidebarMenuView.xib */; };
+		AE95287A1C75BAFB0075DEFD /* DORSidebarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9528761C75BAFB0075DEFD /* DORSidebarMenu.swift */; };
+		AE95287B1C75BAFB0075DEFD /* DORSidebarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9528781C75BAFB0075DEFD /* DORSidebarMenuView.swift */; };
+		AE95287C1C75BAFB0075DEFD /* DORSidebarMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE9528791C75BAFB0075DEFD /* DORSidebarMenuView.xib */; };
 		AE95289D1C75F1C90075DEFD /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9528971C75F1C90075DEFD /* AViewController.swift */; };
 		AE95289E1C75F1C90075DEFD /* AViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE9528981C75F1C90075DEFD /* AViewController.xib */; };
 		AE95289F1C75F1C90075DEFD /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9528991C75F1C90075DEFD /* BViewController.swift */; };
@@ -31,9 +31,9 @@
 		AE95286A1C75BADD0075DEFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE95286D1C75BADD0075DEFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE95286F1C75BADD0075DEFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE9528761C75BAFB0075DEFD /* SidebarMenuWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarMenuWindow.swift; sourceTree = "<group>"; };
-		AE9528781C75BAFB0075DEFD /* SidebarMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarMenuView.swift; sourceTree = "<group>"; };
-		AE9528791C75BAFB0075DEFD /* SidebarMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidebarMenuView.xib; sourceTree = "<group>"; };
+		AE9528761C75BAFB0075DEFD /* DORSidebarMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DORSidebarMenu.swift; sourceTree = "<group>"; };
+		AE9528781C75BAFB0075DEFD /* DORSidebarMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DORSidebarMenuView.swift; sourceTree = "<group>"; };
+		AE9528791C75BAFB0075DEFD /* DORSidebarMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DORSidebarMenuView.xib; sourceTree = "<group>"; };
 		AE9528971C75F1C90075DEFD /* AViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
 		AE9528981C75F1C90075DEFD /* AViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AViewController.xib; sourceTree = "<group>"; };
 		AE9528991C75F1C90075DEFD /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		AE9528751C75BAFB0075DEFD /* SidebarMenu */ = {
 			isa = PBXGroup;
 			children = (
-				AE9528761C75BAFB0075DEFD /* SidebarMenuWindow.swift */,
+				AE9528761C75BAFB0075DEFD /* DORSidebarMenu.swift */,
 				AE9528771C75BAFB0075DEFD /* Views */,
 			);
 			name = SidebarMenu;
@@ -97,8 +97,8 @@
 		AE9528771C75BAFB0075DEFD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AE9528781C75BAFB0075DEFD /* SidebarMenuView.swift */,
-				AE9528791C75BAFB0075DEFD /* SidebarMenuView.xib */,
+				AE9528781C75BAFB0075DEFD /* DORSidebarMenuView.swift */,
+				AE9528791C75BAFB0075DEFD /* DORSidebarMenuView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,7 +178,7 @@
 				AE95286E1C75BADD0075DEFD /* LaunchScreen.storyboard in Resources */,
 				AE95286B1C75BADD0075DEFD /* Assets.xcassets in Resources */,
 				AE9528A01C75F1C90075DEFD /* BViewController.xib in Resources */,
-				AE95287C1C75BAFB0075DEFD /* SidebarMenuView.xib in Resources */,
+				AE95287C1C75BAFB0075DEFD /* DORSidebarMenuView.xib in Resources */,
 				AE9528691C75BADD0075DEFD /* Main.storyboard in Resources */,
 				AE9528A21C75F1C90075DEFD /* CViewController.xib in Resources */,
 			);
@@ -191,11 +191,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE95287A1C75BAFB0075DEFD /* SidebarMenuWindow.swift in Sources */,
+				AE95287A1C75BAFB0075DEFD /* DORSidebarMenu.swift in Sources */,
 				AE95289F1C75F1C90075DEFD /* BViewController.swift in Sources */,
 				AE9528A11C75F1C90075DEFD /* CViewController.swift in Sources */,
 				AE9528661C75BADD0075DEFD /* ViewController.swift in Sources */,
-				AE95287B1C75BAFB0075DEFD /* SidebarMenuView.swift in Sources */,
+				AE95287B1C75BAFB0075DEFD /* DORSidebarMenuView.swift in Sources */,
 				AE9528641C75BADD0075DEFD /* AppDelegate.swift in Sources */,
 				AE95289D1C75F1C90075DEFD /* AViewController.swift in Sources */,
 			);

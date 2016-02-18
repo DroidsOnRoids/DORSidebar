@@ -1,5 +1,5 @@
 //
-//  SidebarMenuWindow.swift
+//  DORSidebarMenu.swift
 //  SidebarMenu
 //
 //  Created by Piotr Sochalewski on 19.01.2016.
@@ -11,10 +11,12 @@ import UIKit
 public typealias MenuElement = (title: String, textColor: UIColor, backgroundColor: UIColor)
 
 enum SidebarMenuError: ErrorType {
+    
     case DifferentNumberOfControllersAndMenuElements(controllersCount: Int, menuElementsCount: Int)
+    
 }
 
-public class SidebarMenu: UIWindow {
+public class DORSidebarMenu: UIWindow {
     
     // MARK: - Private constants
     private var sidebarMenuView: SidebarMenuView

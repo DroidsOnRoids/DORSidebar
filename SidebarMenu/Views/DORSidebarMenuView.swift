@@ -1,5 +1,5 @@
 //
-//  SidebarMenuView.swift
+//  DORSidebarMenuView.swift
 //  SidebarMenu
 //
 //  Created by Piotr Sochalewski on 20.01.2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SidebarMenuView: UIView {
+class DORSidebarMenuView: UIView {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var dismissButton: UIButton!

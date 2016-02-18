@@ -12,12 +12,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var sidebar: SidebarMenu?
+    var sidebar: DORSidebarMenu?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         do {
-            sidebar = try SidebarMenu(width: 240.0,
-                controllers: [AViewController(), BViewController(), nil],
+            sidebar = try DORSidebarMenu(width: 240.0,
+                controllers: [AViewController(), BViewController(), CViewController()],
                 menuElements: ["First", "Second", "Third"])
             sidebar?.overlayVisible = true
             sidebar?.overlayAlpha = 0.15

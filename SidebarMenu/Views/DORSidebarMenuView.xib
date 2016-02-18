@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SidebarMenuView" customModule="SidebarDemo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DORSidebarMenuView" customModule="SidebarDemo" customModuleProvider="target">
             <connections>
                 <outlet property="dismissButton" destination="naZ-UX-gcj" id="IQX-ta-5zD"/>
                 <outlet property="tableView" destination="5hs-V1-XLU" id="ibe-mB-WwF"/>
