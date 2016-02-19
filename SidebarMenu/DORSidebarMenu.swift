@@ -30,7 +30,7 @@ public class DORSidebarMenu: UIWindow {
     // MARK: - Public variables
     public var animateDuration: CFTimeInterval = 0.2
     public var controllers: [UIViewController?]
-    /// Menu elements is an array storing a tuple containg `title`, `textColor` and `backgroundColor`
+    /// Menu elements is an array storing structs with `title`, `textColor` and `backgroundColor`
     public var menuElements = [MenuElement]() {
         didSet {
             sidebarMenuView.tableView.reloadData()
@@ -122,7 +122,7 @@ public class DORSidebarMenu: UIWindow {
     /**
      Creates a SidebarMenu window.
      - parameter controllers: The controllers that should be available from sidebar menu.
-     - parameter menuElements: The array of tuples with (title, text color, background color) for rows in sidebar menu.
+     - parameter menuElements: The array of structs with `title`, `textColor`, `backgroundColor` for rows in sidebar menu.
      */
     public convenience init(width: CGFloat, controllers: [UIViewController?], menuElements: [MenuElement]) throws {
         self.init(width: width, controllers: controllers)
