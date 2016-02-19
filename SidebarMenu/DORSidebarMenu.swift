@@ -92,7 +92,7 @@ public class DORSidebarMenu: UIWindow {
     
     /**
      The overlay's alpha value.
-     The value of this property is a floating-point number in the range 0.0 to 1.0, where 0.0 represents totally transparent and 1.0 represents totally opaque. This value affects only the current view and does not affect any of its embedded subviews.
+     The value of this property is a floating-point number in the range `0.0` to `1.0`, where `0.0` represents totally transparent and `1.0` represents totally opaque. This value affects only the current view and does not affect any of its embedded subviews.
      */
     public var overlayAlpha: CGFloat = 0.0 {
         didSet {
