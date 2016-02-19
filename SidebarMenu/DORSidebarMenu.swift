@@ -8,7 +8,13 @@
 
 import UIKit
 
-public typealias MenuElement = (title: String, textColor: UIColor, backgroundColor: UIColor)
+public struct MenuElement {
+
+    var title: String
+    var textColor: UIColor
+    var backgroundColor: UIColor
+    
+}
 
 enum SidebarMenuError: ErrorType {
     
@@ -109,7 +115,7 @@ public class DORSidebarMenu: UIWindow {
         try validateCounts(controllers, menuElements)
         
         for title in menuElements {
-            self.menuElements.append(MenuElement(title, .blackColor(), .whiteColor()))
+            self.menuElements.append(MenuElement(title: title, textColor: .blackColor(), backgroundColor: .whiteColor()))
         }
     }
     
@@ -183,7 +189,7 @@ extension DORSidebarMenu: UITableViewDataSource {
         if cell == nil {
             cell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
         }
-        
+            
         cell?.textLabel?.text = menuElements[indexPath.row].title
         cell?.textLabel?.textColor = menuElements[indexPath.row].textColor
         cell?.backgroundColor = menuElements[indexPath.row].backgroundColor
