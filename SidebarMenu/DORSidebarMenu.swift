@@ -179,7 +179,7 @@ public class DORSidebarMenu: UIWindow {
         show(duration: animateDuration)
     }
     
-    private func show(duration duration: CFTimeInterval) {
+    private func show(duration duration: NSTimeInterval) {
         makeKeyAndVisible()
         sidebarMenuView.show(duration: duration)
     }
@@ -191,7 +191,7 @@ public class DORSidebarMenu: UIWindow {
         dismiss(duration: animateDuration)
     }
     
-    private func dismiss(duration duration: CFTimeInterval) {
+    private func dismiss(duration duration: NSTimeInterval) {
         if sidebarMenuView.visible {
             sidebarMenuView.dismiss(duration: duration) { _ in
                 self.hidden = true

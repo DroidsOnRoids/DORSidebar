@@ -33,13 +33,13 @@ class DORSidebarMenuView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func show(duration duration: CFTimeInterval) {
+    func show(duration duration: NSTimeInterval) {
         UIView.animateWithDuration(duration) {
             self.frame = CGRect(x: 0.0, y: 0.0, width: self.frame.width, height: CGRectGetHeight(UIScreen.mainScreen().bounds))
         }
     }
     
-    func dismiss(duration duration: CFTimeInterval, finished: ((Bool) -> Void)?) {
+    func dismiss(duration duration: NSTimeInterval, finished: ((Bool) -> Void)?) {
         UIView.animateWithDuration(duration,
             animations: {
                 self.frame = CGRect(x: -self.frame.width, y: 0.0, width: self.frame.width, height: CGRectGetHeight(UIScreen.mainScreen().bounds))
