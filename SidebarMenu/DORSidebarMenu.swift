@@ -8,17 +8,20 @@
 
 import UIKit
 
+/**
+ Struct storing `title`, `textColor` and `backgroundColor`.
+ */
 public struct MenuElement {
 
-    var title: String
-    var textColor: UIColor
-    var backgroundColor: UIColor
+    public var title: String
+    public var textColor: UIColor
+    public var backgroundColor: UIColor
     
 }
 
-enum SidebarMenuError: ErrorType {
+public enum SidebarMenuError: ErrorType {
     
-    case DifferentNumberOfControllersAndMenuElements(controllersCount: Int, menuElementsCount: Int)
+    case NumberOfControllersAndMenuElementsAreNotEqual(controllersCount: Int, menuElementsCount: Int)
     
 }
 
@@ -28,14 +31,30 @@ public class DORSidebarMenu: UIWindow {
     private var sidebarMenuView: DORSidebarMenuView
     
     // MARK: - Public variables
-    public var animateDuration: CFTimeInterval = 0.2
+    
+    /**
+     The total duration of the animations, measured in seconds. If you specify a negative value or `0`, the changes are made without animating them.
+     */
+    public var animateDuration: NSTimeInterval = 0.2
+    
+    /**
+     The array of `UIViewController`s.
+     It can be dangerous to modify this in the runtime, but it is allowed. You should always use designated `init(width:controllers:menuElements:)`.
+     */
     public var controllers: [UIViewController?]
-    /// Menu elements is an array storing structs with `title`, `textColor` and `backgroundColor`
+    
+    /**
+     The array of menu elements is an array storing structs with `title`, `textColor` and `backgroundColor`.
+     It can be dangerous to modify this in the runtime, but it is allowed. You should always use designated `init(width:controllers:menuElements:)`.
+     */
     public var menuElements = [MenuElement]() {
         didSet {
             sidebarMenuView.tableView.reloadData()
         }
     }
+    /**
+     The sidebar menu's color.
+     */
     override public var backgroundColor: UIColor? {
         set {
             sidebarMenuView.view.backgroundColor = newValue
@@ -44,6 +63,11 @@ public class DORSidebarMenu: UIWindow {
             return sidebarMenuView.view.backgroundColor
         }
     }
+    
+    /**
+     The overlay's visibility.
+     The value of this property lets show or not overlay when sidebar menu is shown.
+     */
     public var overlayVisible = false {
         didSet {
             if overlayVisible != oldValue {
@@ -56,11 +80,20 @@ public class DORSidebarMenu: UIWindow {
             }
         }
     }
+    
+    /**
+     The overlay's color.
+     */
     public var overlayColor = UIColor.clearColor() {
         didSet {
             overlay.backgroundColor = overlayColor
         }
     }
+    
+    /**
+     The overlay's alpha value.
+     The value of this property is a floating-point number in the range 0.0 to 1.0, where 0.0 represents totally transparent and 1.0 represents totally opaque. This value affects only the current view and does not affect any of its embedded subviews.
+     */
     public var overlayAlpha: CGFloat = 0.0 {
         didSet {
             overlay.alpha = overlayAlpha
@@ -69,7 +102,6 @@ public class DORSidebarMenu: UIWindow {
     
     // MARK: - Private variables
     private var overlay: UIView!
-    
     private var currentNavigationController: UINavigationController? {
         return UIApplication.sharedApplication().windows.first?.rootViewController as? UINavigationController
     }
@@ -100,7 +132,7 @@ public class DORSidebarMenu: UIWindow {
     
     private func validateCounts<T, U>(a: [T], _ b: [U]) throws {
         if a.count != b.count {
-            throw SidebarMenuError.DifferentNumberOfControllersAndMenuElements(controllersCount: a.count, menuElementsCount: b.count)
+            throw SidebarMenuError.NumberOfControllersAndMenuElementsAreNotEqual(controllersCount: a.count, menuElementsCount: b.count)
         }
     }
     
@@ -132,24 +164,34 @@ public class DORSidebarMenu: UIWindow {
         self.menuElements = menuElements
     }
 
+    /**
+     Not implemented init resulting in fatalError.
+     You should always use designated `init(width:controllers:menuElements:)`.
+     */
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /**
+     Show the sidebar with animation duration set in `animateDuration`.
+     */
     public func show() {
         show(duration: animateDuration)
     }
     
-    public func show(duration duration: CFTimeInterval) {
+    private func show(duration duration: CFTimeInterval) {
         makeKeyAndVisible()
         sidebarMenuView.show(duration: duration)
     }
     
+    /**
+     Dismiss the sidebar with animation duration set in `animateDuration`.
+     */
     public func dismiss() {
         dismiss(duration: animateDuration)
     }
     
-    public func dismiss(duration duration: CFTimeInterval) {
+    private func dismiss(duration duration: CFTimeInterval) {
         if sidebarMenuView.visible {
             sidebarMenuView.dismiss(duration: duration) { _ in
                 self.hidden = true
